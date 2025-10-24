@@ -7,8 +7,8 @@ import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [TweetsModule, UsersModule],
-  controllers: [AppController, TweetsController, UsersController],
+  imports: [TweetsModule, UsersModule], //Registering Other User Defined Modules
+  controllers: [AppController, TweetsController, UsersController], //Register Contollers
   providers: [AppService],
 })
 export class AppModule {}

@@ -7,7 +7,7 @@ export class UsersController {
   @Get()
   getUsers() {
     const usersService = new UsersService();
-    usersService.getAllUsers(); //Without Dependency Injection(DI)
+    return usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
 
   // Create User

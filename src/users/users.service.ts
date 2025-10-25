@@ -22,4 +22,15 @@ export class UsersService {
   getUserById(id: number) {
     return this.users.find((x) => x.id === id);
   }
+
+  //Create User
+  createUser(user: {
+    id: number;
+    name: string;
+    age: number;
+    gender: string;
+    isMarried: boolean;
+  }) {
+    return this.users.push(user);
+  }
 }

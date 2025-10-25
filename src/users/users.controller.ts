@@ -11,8 +11,10 @@ export class UsersController {
   }
 
   @Get(':id')
-  getUserById(@Param('id') param: any) {
-    console.log(param);
+  getUserById(@Param('id') id: any) {
+    console.log('Route Param:', id);
+    const usersService = new UsersService();
+    return usersService.getUserById(+id);
   }
   // Create User
   @Post()

@@ -10,6 +10,8 @@ export class UsersController {
     return usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
 
+  @Get(':id')
+  getUserById() {}
   // Create User
   @Post()
   createUser() {

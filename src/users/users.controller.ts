@@ -6,8 +6,13 @@ export class UsersController {
   //Get Request--> https://localhost:3000/users
   @Get()
   getUsers(@Query() query: any) {
-    console.log(query);
     const usersService = new UsersService();
+    if (query.gender) {
+      return usersService
+        .getAllUsers()
+        .filter((u) => u.gender === query.gender);
+    }
+
     return usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
 

@@ -5,8 +5,7 @@ import { UsersService } from './users.service';
 export class UsersController {
   //Get Request--> https://localhost:3000/users
   @Get()
-  getUsers(@Query('gender') query: any) {
-    //val assigned to query string gender should be logged
+  getUsers(@Query() query: any) {
     console.log(query);
     const usersService = new UsersService();
     return usersService.getAllUsers(); //Without Dependency Injection(DI)

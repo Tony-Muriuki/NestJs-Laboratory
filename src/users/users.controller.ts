@@ -7,12 +7,15 @@ export class UsersController {
   @Get()
   getUsers(@Query() query: any) {
     const usersService = new UsersService();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (query.gender) {
-      return usersService
-        .getAllUsers()
-        .filter((u) => u.gender === query.gender);
+      return (
+        usersService
+          .getAllUsers()
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          .filter((u) => u.gender === query.gender)
+      );
     }
-
     return usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
 

@@ -1,11 +1,12 @@
-import { Controller, Get, Param, Post } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
   //Get Request--> https://localhost:3000/users
   @Get()
-  getUsers() {
+  getUsers(@Query() query: any) {
+    console.log(query);
     const usersService = new UsersService();
     return usersService.getAllUsers(); //Without Dependency Injection(DI)
   }

@@ -19,6 +19,12 @@ export class UsersService {
     { id: 8, name: 'Emma', age: 30, gender: 'Female', isMarried: true },
     { id: 9, name: 'Luke', age: 27, gender: 'Male', isMarried: false },
     { id: 10, name: 'Olivia', age: 26, gender: 'Female', isMarried: false },
+    { id: 11, name: 'Benjamin', age: 33, gender: 'Male', isMarried: true },
+    { id: 12, name: 'Chloe', age: 24, gender: 'Female', isMarried: false },
+    { id: 13, name: 'Nathan', age: 31, gender: 'Male', isMarried: true },
+    { id: 14, name: 'Hannah', age: 23, gender: 'Female', isMarried: false },
+    { id: 15, name: 'Ethan', age: 38, gender: 'Male', isMarried: true },
+    { id: 16, name: 'Isabella', age: 28, gender: 'Female', isMarried: false },
   ];
 
   //Returns all Users

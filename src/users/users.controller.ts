@@ -1,4 +1,11 @@
-import { Controller, Get, Param, Post, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 
 @Controller('users')
@@ -20,10 +27,11 @@ export class UsersController {
   }
 
   @Get(':id')
-  getUserById(@Param('id') id: any) {
+  getUserById(@Param('id', ParseIntPipe) id: number) {
+    console.log(typeof id);
     console.log('Route Param:', id);
     const usersService = new UsersService();
-    return usersService.getUserById(+id);
+    return usersService.getUserById(id);
   }
   // Create User
   @Post()

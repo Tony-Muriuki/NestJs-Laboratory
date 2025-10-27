@@ -14,8 +14,8 @@ export class UsersController {
   //Get Request--> https://localhost:3000/users
   @Get()
   getUsers(
-    @Query('limit', ParseIntPipe, new DefaultValuePipe(10)) limit: number,
-    @Query('page', ParseIntPipe, new DefaultValuePipe(1)) page: number,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
   ) {
     const usersService = new UsersService();
     console.log(limit, page);

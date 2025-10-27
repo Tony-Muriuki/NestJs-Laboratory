@@ -28,8 +28,6 @@ export class UsersController {
 
   @Get(':id')
   getUserById(@Param('id', ParseIntPipe) id: number) {
-    console.log(typeof id);
-
     const usersService = new UsersService();
     return usersService.getUserById(id);
   }

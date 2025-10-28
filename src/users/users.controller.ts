@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   DefaultValuePipe,
   Get,
@@ -6,39 +7,33 @@ import {
   ParseIntPipe,
   Post,
   Query,
+  ValidationPipe,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { CreateUserDto } from './dtos/create-user.dto';
 
 @Controller('users')
 export class UsersController {
+  constructor(private usersService: UsersService) {}
   //Get Request--> https://localhost:3000/users
   @Get()
   getUsers(
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
   ) {
-    const usersService = new UsersService();
     console.log(limit, page);
-    return usersService.getAllUsers(); //Without Dependency Injection(DI)
+    return this.usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
 
   @Get(':id')
   getUserById(@Param('id', ParseIntPipe) id: number) {
-    const usersService = new UsersService();
-    return usersService.getUserById(id);
+    return this.usersService.getUserById(id);
   }
   // Create User
   @Post()
-  createUser() {
-    const userService = new UsersService(); //Instantiating Manually
-    const user = {
-      id: 3,
-      name: 'Mary',
-      email: 'mary@gmail.com',
-      gender: 'Female',
-      isMarried: false,
-    };
-    userService.createUser(user);
-    return 'New User Created!!!!';
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  createUser(@Body(new ValidationPipe()) _user: CreateUserDto) {
+    // this.usersService.createUser(user);
+    return 'A new user Has Been Created';
   }
 }

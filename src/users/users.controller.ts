@@ -30,9 +30,9 @@ export class UsersController {
   }
   // Create User
   @Post()
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  createUser(@Body() _user: CreateUserDto) {
+  createUser(@Body() user: CreateUserDto) {
     // this.usersService.createUser(user);
+    console.log(user);
     return 'A new user Has Been Created';
   }
 }

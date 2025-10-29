@@ -7,6 +7,7 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, //ensures no extra properties  are carried to the controller
+      forbidNonWhitelisted: true, //Throws an error for xtra properties not in the DTO
     }),
   );
   await app.listen(process.env.PORT ?? 3000);

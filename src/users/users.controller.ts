@@ -15,7 +15,7 @@ import { CreateUserDto } from './dtos/create-user.dto';
 export class UsersController {
   constructor(private usersService: UsersService) {}
   //Get Request--> https://localhost:3000/users
-  @Get()
+  @Get(':isMarried')
   getUsers(
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,

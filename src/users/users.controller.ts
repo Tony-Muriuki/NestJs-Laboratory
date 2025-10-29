@@ -7,7 +7,6 @@ import {
   ParseIntPipe,
   Post,
   Query,
-  ValidationPipe,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dtos/create-user.dto';
@@ -32,7 +31,7 @@ export class UsersController {
   // Create User
   @Post()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  createUser(@Body(new ValidationPipe()) _user: CreateUserDto) {
+  createUser(@Body() _user: CreateUserDto) {
     // this.usersService.createUser(user);
     return 'A new user Has Been Created';
   }

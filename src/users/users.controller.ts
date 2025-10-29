@@ -4,6 +4,7 @@ import {
   DefaultValuePipe,
   Get,
   Param,
+  ParseBoolPipe,
   ParseIntPipe,
   Post,
   Query,
@@ -15,12 +16,15 @@ import { CreateUserDto } from './dtos/create-user.dto';
 export class UsersController {
   constructor(private usersService: UsersService) {}
   //Get Request--> https://localhost:3000/users
-  @Get(':isMarried')
+  @Get('{/:isMarried}')
   getUsers(
-    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
+    @Param('isMarried', ParseBoolPipe) isMarried: boolean,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe)
+    limit: number,
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
   ) {
     console.log(limit, page);
+    console.log(isMarried);
     return this.usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
 

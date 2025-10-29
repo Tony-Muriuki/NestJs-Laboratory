@@ -8,6 +8,7 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true, //ensures no extra properties  are carried to the controller
       forbidNonWhitelisted: true, //Throws an error for xtra properties not in the DTO
+      transform: true, //Simply Means whatever dto we are using for the validationpipe data being assigned is an instance of the specified DTO
     }),
   );
   await app.listen(process.env.PORT ?? 3000);

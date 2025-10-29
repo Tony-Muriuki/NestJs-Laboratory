@@ -32,7 +32,8 @@ export class UsersController {
   @Post()
   createUser(@Body() user: CreateUserDto) {
     // this.usersService.createUser(user);
-    console.log(user);
+    console.log(typeof user, user);
+    console.log(user instanceof CreateUserDto);
     return 'A new user Has Been Created';
   }
 }

@@ -4,13 +4,13 @@ import {
   DefaultValuePipe,
   Get,
   Param,
-  ParseBoolPipe,
   ParseIntPipe,
   Post,
   Query,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dtos/create-user.dto';
+import { GetUserParamDto } from './dtos/get-user-param.dto';
 
 @Controller('users')
 export class UsersController {
@@ -18,13 +18,13 @@ export class UsersController {
   //Get Request--> https://localhost:3000/users
   @Get('{/:isMarried}')
   getUsers(
-    @Param('isMarried', ParseBoolPipe) isMarried: boolean,
+    @Param() param: GetUserParamDto,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe)
     limit: number,
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
   ) {
     console.log(limit, page);
-    console.log(isMarried);
+    console.log(param);
     return this.usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
 

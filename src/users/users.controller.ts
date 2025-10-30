@@ -44,5 +44,7 @@ export class UsersController {
 
   //Controller to handle any patch request that will come to the controller
   @Patch()
-  updateUser() {}
+  updateUser(@Body() body: any) {
+    console.log(body);
+  }
 }

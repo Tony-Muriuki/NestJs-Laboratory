@@ -12,6 +12,7 @@ import {
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { GetUserParamDto } from './dtos/get-user-param.dto';
+import { UpdateUserDto } from './dtos/update-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -44,7 +45,8 @@ export class UsersController {
 
   //Controller to handle any patch request that will come to the controller
   @Patch()
-  updateUser(@Body() body: any) {
-    console.log(body);
+  updateUser(@Body() user: UpdateUserDto) {
+    console.log(user);
+    return 'User updated successfully';
   }
 }

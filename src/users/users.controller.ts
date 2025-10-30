@@ -41,5 +41,6 @@ export class UsersController {
     return 'A new user Has Been Created';
   }
 
+  //Controller to handle any patch request that will come to the controller
   updateUser() {}
 }

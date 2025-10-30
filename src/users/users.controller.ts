@@ -40,4 +40,6 @@ export class UsersController {
     console.log(user instanceof CreateUserDto);
     return 'A new user Has Been Created';
   }
+
+  updateUser() {}
 }

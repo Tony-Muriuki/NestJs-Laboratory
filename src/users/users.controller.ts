@@ -5,6 +5,7 @@ import {
   Get,
   Param,
   ParseIntPipe,
+  Patch,
   Post,
   Query,
 } from '@nestjs/common';
@@ -42,5 +43,6 @@ export class UsersController {
   }
 
   //Controller to handle any patch request that will come to the controller
+  @Patch()
   updateUser() {}
 }

@@ -16,7 +16,7 @@ import { UpdateUserDto } from './dtos/update-user.dto';
 
 @Controller('users')
 export class UsersController {
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService) {} //created an instance of Userservice Class inside controller
   //Get Request--> https://localhost:3000/users
   @Get('{/:isMarried}')
   getUsers(

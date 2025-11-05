@@ -54,4 +54,15 @@ export class TweetsService {
       userId: 5,
     },
   ];
+  //Methods
+
+  //Get All Tweets
+  getAllTweets() {
+    return this.tweets;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  getTweets(userId: number) {
+    return 100;
+  }
 }

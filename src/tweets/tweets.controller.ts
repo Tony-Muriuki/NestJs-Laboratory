@@ -6,6 +6,7 @@ export class TweetsController {
   constructor(private tweetsService: TweetsService) {}
 
   //Get all Tweets
+  @Get()
   getAllTweets() {
     return this.tweetsService.getAllTweets();
   }

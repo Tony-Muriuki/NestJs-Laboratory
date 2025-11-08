@@ -65,4 +65,19 @@ export class TweetsService {
   getTweets(userId: number) {
     return 100;
   }
+
+  // Delete a specific tweet by its ID
+  deleteTweet(tweetId: number) {
+    const index = this.tweets.findIndex((tweet) => tweet.userId === tweetId);
+
+    if (index === -1) {
+      throw new Error(`Tweet with ID ${tweetId} not found`);
+    }
+
+    const deletedTweet = this.tweets.splice(index, 1)[0];
+    return {
+      message: 'Tweet deleted successfully',
+      deletedTweet,
+    };
+  }
 }

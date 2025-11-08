@@ -64,7 +64,16 @@ export class TweetsService {
   }
 
   getTweets(userId: number) {
-    return this.tweets.filter((t) => t.userId === userId);
+    const user = this.userService.getUserById(userId);
+    // Ensure user exists
+    if (!user) {
+      throw new Error(`User with ID ${userId} not found`);
+    }
+    const tweets = this.tweets.filter((t) => t.userId === userId);
+    const response = tweets.map((t) => {
+      return { text: t.text, date: t.date, name: user.name };
+    });
+    return response;
   }
 
   // Delete a specific tweet by its ID

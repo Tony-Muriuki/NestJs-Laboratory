@@ -63,7 +63,7 @@ export class TweetsService {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   getTweets(userId: number) {
-    return 100;
+    return this.tweets.filter((t) => t.userId === userId);
   }
 
   // Delete a specific tweet by its ID

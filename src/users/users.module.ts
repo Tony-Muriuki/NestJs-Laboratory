@@ -5,5 +5,6 @@ import { UsersController } from './users.controller';
 @Module({
   providers: [UsersService],
   controllers: [UsersController],
+  exports: [UsersService], // 👈 make UserService available outside
 })
 export class UsersModule {}

@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class TweetsService {
+  constructor(private readonly userService: UsersService) {}
   tweets: { text: string; date: Date; userId: number }[] = [
     {
       text: 'Just setting up my NestJS app!',
@@ -61,7 +63,6 @@ export class TweetsService {
     return this.tweets;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   getTweets(userId: number) {
     return this.tweets.filter((t) => t.userId === userId);
   }

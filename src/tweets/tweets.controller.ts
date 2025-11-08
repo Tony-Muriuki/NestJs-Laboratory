@@ -11,7 +11,7 @@ export class TweetsController {
     return this.tweetsService.getAllTweets();
   }
 
-  @Get(':userId?') // https://localhost:3000/tweets/101 This get route should get all the tweets which this userid has made.
+  @Get(':userId') // https://localhost:3000/tweets/101 This get route should get all the tweets which this userid has made.
   public GetTweets(@Param('userId', ParseIntPipe) userId: number) {
     console.log(userId);
     return this.tweetsService.getTweets(userId);

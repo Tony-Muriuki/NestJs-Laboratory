@@ -10,5 +10,9 @@ export class AuthService {
     const user = this.userService.users.find(
       (u) => u.email === email && u.password === pswd,
     );
+    if (user) {
+      return 'MY_TOKEN';
+    }
+    return 'User Does Not Exist';
   }
 }

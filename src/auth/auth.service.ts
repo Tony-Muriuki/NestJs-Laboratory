@@ -12,6 +12,7 @@ export class AuthService {
       (u) => u.email === email && u.password === pswd,
     );
     if (user) {
+      this.isAuthenticated = true;
       return 'MY_TOKEN';
     }
     return 'User Does Not Exist';

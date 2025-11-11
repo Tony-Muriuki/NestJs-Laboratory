@@ -8,6 +8,7 @@ export class UsersService {
     email: string;
     gender: string;
     isMarried: boolean;
+    password: string;
   }[] = [
     {
       id: 1,
@@ -15,6 +16,7 @@ export class UsersService {
       email: 'john@gmail.com',
       gender: 'Male',
       isMarried: false,
+      password: 'john1234',
     },
     {
       id: 2,
@@ -22,6 +24,7 @@ export class UsersService {
       email: 'mark@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'mark2024',
     },
     {
       id: 3,
@@ -29,6 +32,7 @@ export class UsersService {
       email: 'alice@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'alice!pass',
     },
     {
       id: 4,
@@ -36,6 +40,7 @@ export class UsersService {
       email: 'grace@gmail.com',
       gender: 'Female',
       isMarried: true,
+      password: 'grace789',
     },
     {
       id: 5,
@@ -43,6 +48,7 @@ export class UsersService {
       email: 'daniel@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'daniel321',
     },
     {
       id: 6,
@@ -50,6 +56,7 @@ export class UsersService {
       email: 'sophie@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'sophie@12',
     },
     {
       id: 7,
@@ -57,6 +64,7 @@ export class UsersService {
       email: 'david@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'david007',
     },
     {
       id: 8,
@@ -64,6 +72,7 @@ export class UsersService {
       email: 'emma@gmail.com',
       gender: 'Female',
       isMarried: true,
+      password: 'emma#2025',
     },
     {
       id: 9,
@@ -71,6 +80,7 @@ export class UsersService {
       email: 'luke@gmail.com',
       gender: 'Male',
       isMarried: false,
+      password: 'luke4321',
     },
     {
       id: 10,
@@ -78,6 +88,7 @@ export class UsersService {
       email: 'olivia@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'olivia22',
     },
     {
       id: 11,
@@ -85,6 +96,7 @@ export class UsersService {
       email: 'benjamin@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'ben@jam1n',
     },
     {
       id: 12,
@@ -92,6 +104,7 @@ export class UsersService {
       email: 'chloe@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'chloe!pw',
     },
     {
       id: 13,
@@ -99,6 +112,7 @@ export class UsersService {
       email: 'nathan@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'nathan@89',
     },
     {
       id: 14,
@@ -106,6 +120,7 @@ export class UsersService {
       email: 'hannah@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'han_2025',
     },
     {
       id: 15,
@@ -113,6 +128,7 @@ export class UsersService {
       email: 'ethan@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'ethan999',
     },
     {
       id: 16,
@@ -120,6 +136,7 @@ export class UsersService {
       email: 'isabella@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'isabella*01',
     },
     {
       id: 17,
@@ -127,6 +144,7 @@ export class UsersService {
       email: 'michael@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'mike@777',
     },
     {
       id: 18,
@@ -134,6 +152,7 @@ export class UsersService {
       email: 'lily@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'lily_love',
     },
     {
       id: 19,
@@ -141,6 +160,7 @@ export class UsersService {
       email: 'matthew@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'matthew!23',
     },
     {
       id: 20,
@@ -148,6 +168,7 @@ export class UsersService {
       email: 'sophia@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'sophia123',
     },
     {
       id: 21,
@@ -155,6 +176,7 @@ export class UsersService {
       email: 'james@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'james_007',
     },
     {
       id: 22,
@@ -162,6 +184,7 @@ export class UsersService {
       email: 'ella@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'ella@pw',
     },
     {
       id: 23,
@@ -169,6 +192,7 @@ export class UsersService {
       email: 'henry@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'henry@king',
     },
     {
       id: 24,
@@ -176,6 +200,7 @@ export class UsersService {
       email: 'mia@gmail.com',
       gender: 'Female',
       isMarried: true,
+      password: 'mia@2024',
     },
     {
       id: 25,
@@ -183,6 +208,7 @@ export class UsersService {
       email: 'samuel@gmail.com',
       gender: 'Male',
       isMarried: false,
+      password: 'sam!rule',
     },
     {
       id: 26,
@@ -190,6 +216,7 @@ export class UsersService {
       email: 'charlotte@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'char123',
     },
     {
       id: 27,
@@ -197,6 +224,7 @@ export class UsersService {
       email: 'logan@gmail.com',
       gender: 'Male',
       isMarried: true,
+      password: 'logan#pw',
     },
     {
       id: 28,
@@ -204,6 +232,7 @@ export class UsersService {
       email: 'amelia@gmail.com',
       gender: 'Female',
       isMarried: true,
+      password: 'amelia*22',
     },
     {
       id: 29,
@@ -211,6 +240,7 @@ export class UsersService {
       email: 'jacob@gmail.com',
       gender: 'Male',
       isMarried: false,
+      password: 'jacob_88',
     },
     {
       id: 30,
@@ -218,6 +248,7 @@ export class UsersService {
       email: 'aria@gmail.com',
       gender: 'Female',
       isMarried: false,
+      password: 'aria@123',
     },
   ];
 
@@ -238,6 +269,7 @@ export class UsersService {
     email: string;
     gender: string;
     isMarried: boolean;
+    password: string;
   }) {
     return this.users.push(user);
   }

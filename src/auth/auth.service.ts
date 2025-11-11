@@ -6,5 +6,9 @@ import { UsersService } from 'src/users/users.service';
 export class AuthService {
   constructor(private readonly userService: UsersService) {}
 
-  login(email: string, pswd: string) {}
+  login(email: string, pswd: string) {
+    const user = this.userService.users.find(
+      (u) => u.email === email && u.password === pswd,
+    );
+  }
 }

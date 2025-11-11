@@ -1,7 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { AuthService } from 'src/auth/auth.service';
 
 @Injectable()
 export class UsersService {
+  constructor(
+    @Inject(forwardRef(() => AuthService))
+    private readonly authService: AuthService,
+  ) {}
   users: {
     id: number;
     name: string;
@@ -254,7 +259,10 @@ export class UsersService {
 
   //Returns all Users
   getAllUsers() {
-    return this.users;
+    if (this.authService.isAuthenticated) {
+      return this.users;
+    }
+    return 'YOU ARE NOT LOGGED IN';
   }
   //Returns user based on Id :.find(...)
   // .find() is a JavaScript array method that goes through each element in the array one by one, and returns the first element that matches a given condition (the “test”).

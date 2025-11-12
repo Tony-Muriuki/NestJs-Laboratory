@@ -8,7 +8,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [TweetsModule, UsersModule, AuthModule, TypeOrmModule], //Registering Other User Defined Modules
+  imports: [TweetsModule, UsersModule, AuthModule, TypeOrmModule.forRoot()], //Registering Other User Defined Modules
   controllers: [AppController], //Register Contollers
   providers: [AppService],
 })

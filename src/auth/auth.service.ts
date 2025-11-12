@@ -10,6 +10,7 @@ export class AuthService {
 
   isAuthenticated: boolean = false;
 
+  //Login Method
   login(email: string, pswd: string) {
     const user = this.userService.users.find(
       (u) => u.email === email && u.password === pswd,

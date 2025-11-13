@@ -4,13 +4,9 @@ import {
   IsString,
   MinLength,
   IsOptional,
-  IsBoolean,
-  IsNumber,
 } from 'class-validator';
 
 export class CreateUserDto {
-  @IsNumber()
-  id: number;
   @IsNotEmpty({ message: 'Invalid.Name should be string' }) //This validators can also take an error message or thedefault built-in  message will be displayed
   @IsString()
   @MinLength(3, { message: 'Name should have a minimum of Three charcters' })
@@ -20,6 +16,4 @@ export class CreateUserDto {
   @IsString()
   @IsOptional()
   gender: string;
-  @IsBoolean()
-  isMarried: boolean;
 }

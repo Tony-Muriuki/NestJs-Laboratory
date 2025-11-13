@@ -31,6 +31,7 @@ export class CreateUserDto {
 
   @IsEmail()
   @IsNotEmpty()
+  @MaxLength(100, { message: 'Email should have a maximum of 100 characters' })
   email: string;
 
   @IsNotEmpty()

@@ -28,7 +28,7 @@ import { User } from './users/user.entity';
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_NAME'),
         entities: [User],
-        synchronize: true,
+        synchronize: true, // ✅Auto-syncs your entities with DB (use only in dev)
       }),
     }),
   ], //Registering Other User Defined Modules

@@ -12,7 +12,7 @@ export class User {
   firstName: string;
   @Column({ type: 'varchar', length: 100, nullable: false })
   lastName: string;
-  @Column()
+  @Column({ type: 'varchar', length: 10, nullable: true })
   gender: string;
   @Column()
   email: string;

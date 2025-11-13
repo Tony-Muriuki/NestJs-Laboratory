@@ -10,7 +10,7 @@ export class User {
     nullable: false,
   })
   firstName: string;
-  @Column()
+  @Column({ type: 'varchar', length: 100, nullable: false })
   lastName: string;
   @Column()
   gender: string;

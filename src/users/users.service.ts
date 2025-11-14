@@ -71,22 +71,6 @@ export class UsersService {
       isMarried: true,
       password: 'david007',
     },
-    {
-      id: 8,
-      name: 'Emma',
-      email: 'emma@gmail.com',
-      gender: 'Female',
-      isMarried: true,
-      password: 'emma#2025',
-    },
-    {
-      id: 9,
-      name: 'Luke',
-      email: 'luke@gmail.com',
-      gender: 'Male',
-      isMarried: false,
-      password: 'luke4321',
-    },
   ];
 
   //Returns all Users

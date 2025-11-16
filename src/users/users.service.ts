@@ -1,4 +1,4 @@
-//Users Services
+//Users Service
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { AuthService } from 'src/auth/auth.service';
 

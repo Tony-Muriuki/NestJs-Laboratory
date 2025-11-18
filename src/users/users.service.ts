@@ -8,12 +8,46 @@ export class UsersService {
     @Inject(forwardRef(() => AuthService))
     private readonly authService: AuthService,
   ) {}
+  users: {
+    id: number;
+    name: string;
+    email: string;
+    gender: string;
+    isMarried: boolean;
+    password: string;
+  }[] = [
+    {
+      id: 1,
+      name: 'John',
+      email: 'john@gmail.com',
+      gender: 'Male',
+      isMarried: false,
+      password: 'john1234',
+    },
+    {
+      id: 2,
+      name: 'Mark',
+      email: 'mark@gmail.com',
+      gender: 'Male',
+      isMarried: true,
+      password: 'mark2024',
+    },
+  ];
 
   //Returns all Users
-  getAllUsers() {}
+  getAllUsers() {
+    if (this.authService.isAuthenticated) {
+      return this.users;
+    }
+    return 'YOU ARE NOT LOGGED IN';
+  }
+  //Returns user based on Id :.find(...)
+  // .find() is a JavaScript array method that goes through each element in the array one by one, and returns the first element that matches a given condition (the “test”).
+  getUserById(id: number) {
+    return this.users.find((x) => x.id === id);
+  }
 
   //Create User
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   createUser(user: {
     id: number;
     name: string;
@@ -21,5 +55,7 @@ export class UsersService {
     gender: string;
     isMarried: boolean;
     password: string;
-  }) {}
+  }) {
+    return this.users.push(user);
+  }
 }

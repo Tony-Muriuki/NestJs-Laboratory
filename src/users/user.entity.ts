@@ -1,4 +1,4 @@
-//Users Entity
+//User Entity
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('users') // ← renamed table

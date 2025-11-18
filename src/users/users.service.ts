@@ -1,38 +1,35 @@
 //Users Service
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { User } from './user.entity';
+import { CreateUserDto } from './dtos/create-user.dto';
 
 @Injectable()
 export class UsersService {
-  constructor() {}
-  users: {
-    id: number;
-    name: string;
-    email: string;
-    gender: string;
-    isMarried: boolean;
-    password: string;
-  }[] = [
-    {
-      id: 1,
-      name: 'John',
-      email: 'john@gmail.com',
-      gender: 'Male',
-      isMarried: false,
-      password: 'john1234',
-    },
-    {
-      id: 2,
-      name: 'Mark',
-      email: 'mark@gmail.com',
-      gender: 'Male',
-      isMarried: true,
-      password: 'mark2024',
-    },
-  ];
+  constructor(
+    @InjectRepository(User)
+    private userRepository: Repository<User>,
+  ) {}
 
   //Returns all Users
-  getAllUsers() {}
+  getAllUsers() {
+    return this.userRepository.find();
+  }
 
   //Create User
-  createUser() {}
+  public async createUser(userDto: CreateUserDto) {
+    //Validate if a user exists with a given email(if exists do not insert)
+    const user = await this.userRepository.findOne({
+      where: { email: userDto.email },
+    });
+    //Handle the error or exception
+    if (user) {
+      return 'The user with the given email already exists';
+    }
+    //If no user found with the same email Create User
+    let newUser = this.userRepository.create(userDto);
+    newUser = await this.userRepository.save(newUser);
+    return newUser;
+  }
 }

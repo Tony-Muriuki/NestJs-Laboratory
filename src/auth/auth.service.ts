@@ -11,14 +11,6 @@ export class AuthService {
   isAuthenticated: boolean = false;
 
   //Login Method
-  login(email: string, pswd: string) {
-    const user = this.userService.users.find(
-      (u) => u.email === email && u.password === pswd,
-    );
-    if (user) {
-      this.isAuthenticated = true;
-      return 'MY_TOKEN';
-    }
-    return 'User Does Not Exist';
-  }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  login(email: string, pswd: string) {}
 }

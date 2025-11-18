@@ -38,14 +38,5 @@ export class UsersService {
   getAllUsers() {}
 
   //Create User
-  createUser(user: {
-    id: number;
-    name: string;
-    email: string;
-    gender: string;
-    isMarried: boolean;
-    password: string;
-  }) {
-    return this.users.push(user);
-  }
+  createUser() {}
 }

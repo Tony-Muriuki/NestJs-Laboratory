@@ -35,17 +35,7 @@ export class UsersService {
   ];
 
   //Returns all Users
-  getAllUsers() {
-    if (this.authService.isAuthenticated) {
-      return this.users;
-    }
-    return 'YOU ARE NOT LOGGED IN';
-  }
-  //Returns user based on Id :.find(...)
-  // .find() is a JavaScript array method that goes through each element in the array one by one, and returns the first element that matches a given condition (the “test”).
-  getUserById(id: number) {
-    return this.users.find((x) => x.id === id);
-  }
+  getAllUsers() {}
 
   //Create User
   createUser(user: {

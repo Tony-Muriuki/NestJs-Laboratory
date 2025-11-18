@@ -32,7 +32,8 @@ export class UsersController {
 
   @Get(':id')
   getUserById(@Param('id', ParseIntPipe) id: number) {
-    return this.usersService.getUserById(id);
+    // return this.usersService.getUserById(id);
+    return console.log(id);
   }
   // Create User
   @Post()

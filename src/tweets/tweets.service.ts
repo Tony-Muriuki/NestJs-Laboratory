@@ -65,14 +65,14 @@ export class TweetsService {
   }
 
   getTweets(userId: number) {
-    const user = this.userService.getUserById(userId);
+    const user = this.userService;
     // Ensure user exists
     if (!user) {
       throw new Error(`User with ID ${userId} not found`);
     }
     const tweets = this.tweets.filter((t) => t.userId === userId);
     const response = tweets.map((t) => {
-      return { text: t.text, date: t.date, name: user.name };
+      return { text: t.text, date: t.date, name: user };
     });
     return response;
   }

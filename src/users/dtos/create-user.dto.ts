@@ -1,3 +1,4 @@
+//User DTO(Data Transfer Object)
 import {
   IsEmail,
   IsNotEmpty,

@@ -14,4 +14,10 @@ export class Profile {
   lastName: string;
   @Column({ type: 'varchar', length: 10, nullable: true })
   gender: string;
+
+  @Column({
+    type: 'timestamp',
+    nullable: true,
+  })
+  dateofBirth: Date;
 }

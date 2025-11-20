@@ -4,6 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity('users') // ← renamed table
@@ -18,6 +19,7 @@ export class User {
   password: string;
   @CreateDateColumn() //Sets the value of the Created At Field when Created
   createdAT: Date; //Record Date and Time when a User was Created.
+  @UpdateDateColumn()
   updatedAT: Date;
   deletedAT: Date;
 }

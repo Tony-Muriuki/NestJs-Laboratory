@@ -8,6 +8,7 @@ import {
 
 export class CreateProfileDto {
   @IsNotEmpty({ message: 'Invalid.First Name should be string' }) //This validators can also take an error message or thedefault built-in  message will be displayed
+  @IsOptional()
   @IsString()
   @MinLength(3, { message: 'Name should have a minimum of Three charcters' })
   @MaxLength(100, {
@@ -16,6 +17,7 @@ export class CreateProfileDto {
   firstName?: string;
 
   @IsNotEmpty({ message: 'Invalid. Last Name should be string' }) //This validators can also take an error message or thedefault built-in  message will be displayed
+  @IsOptional()
   @IsString()
   @MinLength(3, { message: 'Name should have a minimum of Three charcters' })
   @MaxLength(100, {

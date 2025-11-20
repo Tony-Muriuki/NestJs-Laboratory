@@ -2,6 +2,7 @@
 import {
   Column,
   CreateDateColumn,
+  DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -21,5 +22,6 @@ export class User {
   createdAT: Date; //Record Date and Time when a User was Created.
   @UpdateDateColumn()
   updatedAT: Date;
+  @DeleteDateColumn()
   deletedAT: Date;
 }

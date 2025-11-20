@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { User } from './users/user.entity';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { User } from './users/user.entity';
         synchronize: true, // Automatically sync entities with the DB — great for dev, but disable in production
       }),
     }),
+    ProfileModule,
   ], //Registering Other User Defined Modules
   controllers: [AppController], //Register Contollers
   providers: [AppService],

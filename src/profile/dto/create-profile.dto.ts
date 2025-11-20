@@ -4,6 +4,7 @@ import {
   MinLength,
   MaxLength,
   IsOptional,
+  IsDate,
 } from 'class-validator';
 
 export class CreateProfileDto {
@@ -29,4 +30,16 @@ export class CreateProfileDto {
   @IsOptional()
   @MaxLength(10, { message: 'Gender should have a maximum of Ten characters' })
   gender?: string;
+
+  @IsDate()
+  @IsOptional()
+  dateOfBirth?: Date;
+
+  @IsString()
+  @IsOptional()
+  bio?: string;
+
+  @IsString()
+  @IsOptional()
+  profileImage?: string;
 }

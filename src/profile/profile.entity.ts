@@ -20,4 +20,9 @@ export class Profile {
     nullable: true,
   })
   dateofBirth: Date;
+
+  @Column({
+    type: 'text',
+  })
+  bio: string;
 }

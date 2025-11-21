@@ -7,7 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { User } from './users/user.entity';
+// import { User } from './users/user.entity';
 import { ProfileModule } from './profile/profile.module';
 
 @Module({
@@ -28,7 +28,8 @@ import { ProfileModule } from './profile/profile.module';
         username: configService.get<string>('DB_USERNAME'), // Database username (e.g., 'nestjs' or custom user)
         password: configService.get<string>('DB_PASSWORD'), // Password for the database user
         database: configService.get<string>('DB_NAME'), // Name of the database to connect to
-        entities: [User], // List of entities (tables) managed by TypeORM — here we include the User entity
+        // entities: [User], // List of entities (tables) managed by TypeORM — here we include the User entity
+        autoLoadEntities: true, // Automatically load entities from all modules (no need to list them manually)
         synchronize: true, // Automatically sync entities with the DB — great for dev, but disable in production
       }),
     }),

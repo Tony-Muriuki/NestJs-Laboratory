@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 //Users Service
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';

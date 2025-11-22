@@ -25,6 +25,7 @@ export class UsersService {
   //Create User
   public async createUser(userDto: CreateUserDto) {
     //Create A Profile & Save
+    let profile = this.profileRepository.create(userDto.profile);
     //Create User Object
     //Set The Profile
     //Save The User Object

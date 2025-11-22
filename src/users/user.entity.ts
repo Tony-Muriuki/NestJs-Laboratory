@@ -21,7 +21,9 @@ export class User {
   email: string;
   @Column({ type: 'varchar', length: 100, nullable: false })
   password: string;
-  @OneToOne(() => Profile)
+  @OneToOne(() => Profile, {
+    cascade: true,
+  })
   @JoinColumn()
   profile?: Profile; //Marked as Optional
   @CreateDateColumn() //Sets the value of the Created At Field when Created

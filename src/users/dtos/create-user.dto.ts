@@ -5,7 +5,9 @@ import {
   IsString,
   MinLength,
   MaxLength,
+  IsOptional,
 } from 'class-validator';
+import { CreateProfileDto } from 'src/profile/dto/create-profile.dto';
 
 export class CreateUserDto {
   @IsEmail()
@@ -28,4 +30,6 @@ export class CreateUserDto {
     message: 'Password should have a minimum of Eight charcters',
   })
   password: string;
+  @IsOptional()
+  profile: CreateProfileDto | null;
 }

@@ -22,7 +22,7 @@ export class User {
   @Column({ type: 'varchar', length: 100, nullable: false })
   password: string;
   @OneToOne(() => Profile, {
-    cascade: true,
+    cascade: ['insert'],
   })
   @JoinColumn()
   profile?: Profile; //Marked as Optional

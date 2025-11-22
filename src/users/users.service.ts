@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 //Users Service
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -25,7 +24,9 @@ export class UsersService {
   //Create User
   public async createUser(userDto: CreateUserDto) {
     //Create A Profile & Save
-    let profile = this.profileRepository.create(userDto.profile);
+    userDto.profile = userDto.profile ?? {};
+    const profile = this.profileRepository.create(userDto.profile);
+    await this.profileRepository.save(profile);
     //Create User Object
     //Set The Profile
     //Save The User Object
